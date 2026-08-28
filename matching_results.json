@@ -1,0 +1,1018 @@
+{
+  "real_results": [
+    {
+      "bank_credit_id": "bc_bd9c66b3",
+      "matched_payment_ids": [
+        "pay_bdd640fb"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 333645,
+      "bank_credit_amount_paise": 333645,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_06cb0fb3",
+      "matched_payment_ids": [
+        "pay_0822e8f3"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 285987,
+      "bank_credit_amount_paise": 285987,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_ce4a2bbd",
+      "matched_payment_ids": [
+        "pay_6b65a6a4"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 110411,
+      "bank_credit_amount_paise": 110411,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_17be3111",
+      "matched_payment_ids": [
+        "pay_47229389"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 363393,
+      "bank_credit_amount_paise": 363393,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_1ff49b78",
+      "matched_payment_ids": [
+        "pay_9a8dca03"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 58668,
+      "bank_credit_amount_paise": 58668,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_3139d32c",
+      "matched_payment_ids": [
+        "pay_8d5288f1"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 476967,
+      "bank_credit_amount_paise": 476967,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_19db3ad0",
+      "matched_payment_ids": [
+        "pay_c5e7ce8a"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 44906,
+      "bank_credit_amount_paise": 44906,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_efc89849",
+      "matched_payment_ids": [
+        "pay_29a3b2e9"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 150507,
+      "bank_credit_amount_paise": 150507,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_fd5166e6",
+      "matched_payment_ids": [
+        "pay_88bd6407"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 338006,
+      "bank_credit_amount_paise": 338006,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_d261a7ab",
+      "matched_payment_ids": [
+        "pay_af42e12f"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 333936,
+      "bank_credit_amount_paise": 333936,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_b7c93acf",
+      "matched_payment_ids": [
+        "pay_448aaa9e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 417559,
+      "bank_credit_amount_paise": 417559,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_23bed01d",
+      "matched_payment_ids": [
+        "pay_654821d0"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 117397,
+      "bank_credit_amount_paise": 117397,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_5cabcc97",
+      "matched_payment_ids": [
+        "pay_434308bc"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 387131,
+      "bank_credit_amount_paise": 387131,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_28f49481",
+      "matched_payment_ids": [
+        "pay_1745d6d8"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 79753,
+      "bank_credit_amount_paise": 79753,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_f89897b9",
+      "matched_payment_ids": [
+        "pay_62801c45"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 354446,
+      "bank_credit_amount_paise": 354446,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_444ea7c8",
+      "matched_payment_ids": [
+        "pay_ae270da7"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 445799,
+      "bank_credit_amount_paise": 445799,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_8026695f",
+      "matched_payment_ids": [
+        "pay_4b22d308"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 334423,
+      "bank_credit_amount_paise": 334423,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_32ebd689",
+      "matched_payment_ids": [
+        "pay_deda4e16"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 100183,
+      "bank_credit_amount_paise": 100183,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_52fbe43b",
+      "matched_payment_ids": [
+        "pay_8a14be62"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 199117,
+      "bank_credit_amount_paise": 199117,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_3da9c2a9",
+      "matched_payment_ids": [
+        "pay_e0f3eab0"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 19533,
+      "bank_credit_amount_paise": 19533,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_2031d750",
+      "matched_payment_ids": [
+        "pay_15ed6269"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 297129,
+      "bank_credit_amount_paise": 297129,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_8a0f4efb",
+      "matched_payment_ids": [
+        "pay_43dac043"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 343943,
+      "bank_credit_amount_paise": 343943,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_702753a1",
+      "matched_payment_ids": [
+        "pay_b683d2e6"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 379502,
+      "bank_credit_amount_paise": 379502,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_3ae8cc93",
+      "matched_payment_ids": [
+        "pay_3f76be1d"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 271906,
+      "bank_credit_amount_paise": 271906,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_5496f63c",
+      "matched_payment_ids": [
+        "pay_b535106e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 121243,
+      "bank_credit_amount_paise": 121243,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_7900f7f9",
+      "matched_payment_ids": [
+        "pay_ab4220a7"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 270173,
+      "bank_credit_amount_paise": 270173,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_693dffbc",
+      "matched_payment_ids": [
+        "pay_30beb45f"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 407210,
+      "bank_credit_amount_paise": 407210,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_ba6c34ab",
+      "matched_payment_ids": [
+        "pay_ac619e63"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 447348,
+      "bank_credit_amount_paise": 447348,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_2ef91276",
+      "matched_payment_ids": [
+        "pay_3fa7f104"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 415304,
+      "bank_credit_amount_paise": 415304,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_a6f2f7b8",
+      "matched_payment_ids": [
+        "pay_71710434"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 244065,
+      "bank_credit_amount_paise": 244065,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_680ac07a",
+      "matched_payment_ids": [
+        "pay_f8102383"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 283565,
+      "bank_credit_amount_paise": 283565,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_ed3049cf",
+      "matched_payment_ids": [
+        "pay_e7067ef4"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 253556,
+      "bank_credit_amount_paise": 253556,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_b7e99aca",
+      "matched_payment_ids": [
+        "pay_6c4a37ea"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 407468,
+      "bank_credit_amount_paise": 407468,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_bf7b539b",
+      "matched_payment_ids": [
+        "pay_37bb3eec"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 88096,
+      "bank_credit_amount_paise": 88096,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_82010c62",
+      "matched_payment_ids": [
+        "pay_80bacd64"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 38630,
+      "bank_credit_amount_paise": 38630,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_f10c718b",
+      "matched_payment_ids": [
+        "pay_98543881"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 441017,
+      "bank_credit_amount_paise": 441017,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_50fd9d3f",
+      "matched_payment_ids": [
+        "pay_9e8fc965"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 298303,
+      "bank_credit_amount_paise": 298303,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_750cab75",
+      "matched_payment_ids": [
+        "pay_3d1a85dd"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 141787,
+      "bank_credit_amount_paise": 141787,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_89a2688b",
+      "matched_payment_ids": [
+        "pay_02627f73"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 480373,
+      "bank_credit_amount_paise": 480373,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_48f4ef12",
+      "matched_payment_ids": [
+        "pay_eeea163e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 265983,
+      "bank_credit_amount_paise": 265983,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_0200b1f0",
+      "matched_payment_ids": [
+        "pay_b41b3143"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 231681,
+      "bank_credit_amount_paise": 231681,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_1d8cbbac",
+      "matched_payment_ids": [
+        "pay_ee87905e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 423669,
+      "bank_credit_amount_paise": 423669,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_295d6fbf",
+      "matched_payment_ids": [
+        "pay_45b89cd9",
+        "pay_81627cf1",
+        "pay_d450281c"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 60708,
+      "bank_credit_amount_paise": 60708,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_d5a804eb",
+      "matched_payment_ids": [
+        "pay_951f58d0",
+        "pay_aabc25fa"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 96640,
+      "bank_credit_amount_paise": 96640,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_0ab54bde",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 48320,
+      "epsilon_pct_used": null
+    },
+    {
+      "bank_credit_id": "bc_4eea04e7",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 48320,
+      "epsilon_pct_used": null
+    },
+    {
+      "bank_credit_id": "bc_35c7936c",
+      "matched_payment_ids": [
+        "pay_eededb07"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 77312,
+      "bank_credit_amount_paise": 77312,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_dd56cc94",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 86076,
+      "epsilon_pct_used": null
+    },
+    {
+      "bank_credit_id": "bc_2dea9493",
+      "matched_payment_ids": [
+        "pay_ccc56569"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 72480,
+      "bank_credit_amount_paise": 72480,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_c991603f",
+      "matched_payment_ids": [
+        "pay_bc2cbb0d"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 24160,
+      "bank_credit_amount_paise": 24160,
+      "epsilon_pct_used": 0.0
+    },
+    {
+      "bank_credit_id": "bc_33173470",
+      "matched_payment_ids": [
+        "pay_bfddc3d9",
+        "pay_ecab3301"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 104976,
+      "bank_credit_amount_paise": 108623,
+      "epsilon_pct_used": 99.97
+    },
+    {
+      "bank_credit_id": "bc_f94d6204",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 28320,
+      "epsilon_pct_used": null
+    },
+    {
+      "bank_credit_id": "bc_dd334cc7",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 33000,
+      "epsilon_pct_used": null
+    }
+  ],
+  "naive_results": [
+    {
+      "bank_credit_id": "bc_bd9c66b3",
+      "matched_payment_ids": [
+        "pay_bdd640fb"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 333645,
+      "bank_credit_amount_paise": 333645
+    },
+    {
+      "bank_credit_id": "bc_06cb0fb3",
+      "matched_payment_ids": [
+        "pay_0822e8f3"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 285987,
+      "bank_credit_amount_paise": 285987
+    },
+    {
+      "bank_credit_id": "bc_ce4a2bbd",
+      "matched_payment_ids": [
+        "pay_6b65a6a4"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 110411,
+      "bank_credit_amount_paise": 110411
+    },
+    {
+      "bank_credit_id": "bc_17be3111",
+      "matched_payment_ids": [
+        "pay_47229389"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 363393,
+      "bank_credit_amount_paise": 363393
+    },
+    {
+      "bank_credit_id": "bc_1ff49b78",
+      "matched_payment_ids": [
+        "pay_9a8dca03"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 58668,
+      "bank_credit_amount_paise": 58668
+    },
+    {
+      "bank_credit_id": "bc_3139d32c",
+      "matched_payment_ids": [
+        "pay_8d5288f1"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 476967,
+      "bank_credit_amount_paise": 476967
+    },
+    {
+      "bank_credit_id": "bc_19db3ad0",
+      "matched_payment_ids": [
+        "pay_c5e7ce8a"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 44906,
+      "bank_credit_amount_paise": 44906
+    },
+    {
+      "bank_credit_id": "bc_efc89849",
+      "matched_payment_ids": [
+        "pay_29a3b2e9"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 150507,
+      "bank_credit_amount_paise": 150507
+    },
+    {
+      "bank_credit_id": "bc_fd5166e6",
+      "matched_payment_ids": [
+        "pay_88bd6407"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 338006,
+      "bank_credit_amount_paise": 338006
+    },
+    {
+      "bank_credit_id": "bc_d261a7ab",
+      "matched_payment_ids": [
+        "pay_af42e12f"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 333936,
+      "bank_credit_amount_paise": 333936
+    },
+    {
+      "bank_credit_id": "bc_b7c93acf",
+      "matched_payment_ids": [
+        "pay_448aaa9e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 417559,
+      "bank_credit_amount_paise": 417559
+    },
+    {
+      "bank_credit_id": "bc_23bed01d",
+      "matched_payment_ids": [
+        "pay_654821d0"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 117397,
+      "bank_credit_amount_paise": 117397
+    },
+    {
+      "bank_credit_id": "bc_5cabcc97",
+      "matched_payment_ids": [
+        "pay_434308bc"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 387131,
+      "bank_credit_amount_paise": 387131
+    },
+    {
+      "bank_credit_id": "bc_28f49481",
+      "matched_payment_ids": [
+        "pay_1745d6d8"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 79753,
+      "bank_credit_amount_paise": 79753
+    },
+    {
+      "bank_credit_id": "bc_f89897b9",
+      "matched_payment_ids": [
+        "pay_62801c45"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 354446,
+      "bank_credit_amount_paise": 354446
+    },
+    {
+      "bank_credit_id": "bc_444ea7c8",
+      "matched_payment_ids": [
+        "pay_ae270da7"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 445799,
+      "bank_credit_amount_paise": 445799
+    },
+    {
+      "bank_credit_id": "bc_8026695f",
+      "matched_payment_ids": [
+        "pay_4b22d308"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 334423,
+      "bank_credit_amount_paise": 334423
+    },
+    {
+      "bank_credit_id": "bc_32ebd689",
+      "matched_payment_ids": [
+        "pay_deda4e16"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 100183,
+      "bank_credit_amount_paise": 100183
+    },
+    {
+      "bank_credit_id": "bc_52fbe43b",
+      "matched_payment_ids": [
+        "pay_8a14be62"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 199117,
+      "bank_credit_amount_paise": 199117
+    },
+    {
+      "bank_credit_id": "bc_3da9c2a9",
+      "matched_payment_ids": [
+        "pay_e0f3eab0"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 19533,
+      "bank_credit_amount_paise": 19533
+    },
+    {
+      "bank_credit_id": "bc_2031d750",
+      "matched_payment_ids": [
+        "pay_15ed6269"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 297129,
+      "bank_credit_amount_paise": 297129
+    },
+    {
+      "bank_credit_id": "bc_8a0f4efb",
+      "matched_payment_ids": [
+        "pay_43dac043"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 343943,
+      "bank_credit_amount_paise": 343943
+    },
+    {
+      "bank_credit_id": "bc_702753a1",
+      "matched_payment_ids": [
+        "pay_b683d2e6"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 379502,
+      "bank_credit_amount_paise": 379502
+    },
+    {
+      "bank_credit_id": "bc_3ae8cc93",
+      "matched_payment_ids": [
+        "pay_3f76be1d"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 271906,
+      "bank_credit_amount_paise": 271906
+    },
+    {
+      "bank_credit_id": "bc_5496f63c",
+      "matched_payment_ids": [
+        "pay_b535106e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 121243,
+      "bank_credit_amount_paise": 121243
+    },
+    {
+      "bank_credit_id": "bc_7900f7f9",
+      "matched_payment_ids": [
+        "pay_ab4220a7"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 270173,
+      "bank_credit_amount_paise": 270173
+    },
+    {
+      "bank_credit_id": "bc_693dffbc",
+      "matched_payment_ids": [
+        "pay_30beb45f"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 407210,
+      "bank_credit_amount_paise": 407210
+    },
+    {
+      "bank_credit_id": "bc_ba6c34ab",
+      "matched_payment_ids": [
+        "pay_ac619e63"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 447348,
+      "bank_credit_amount_paise": 447348
+    },
+    {
+      "bank_credit_id": "bc_2ef91276",
+      "matched_payment_ids": [
+        "pay_3fa7f104"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 415304,
+      "bank_credit_amount_paise": 415304
+    },
+    {
+      "bank_credit_id": "bc_a6f2f7b8",
+      "matched_payment_ids": [
+        "pay_71710434"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 244065,
+      "bank_credit_amount_paise": 244065
+    },
+    {
+      "bank_credit_id": "bc_680ac07a",
+      "matched_payment_ids": [
+        "pay_f8102383"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 283565,
+      "bank_credit_amount_paise": 283565
+    },
+    {
+      "bank_credit_id": "bc_ed3049cf",
+      "matched_payment_ids": [
+        "pay_e7067ef4"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 253556,
+      "bank_credit_amount_paise": 253556
+    },
+    {
+      "bank_credit_id": "bc_b7e99aca",
+      "matched_payment_ids": [
+        "pay_6c4a37ea"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 407468,
+      "bank_credit_amount_paise": 407468
+    },
+    {
+      "bank_credit_id": "bc_bf7b539b",
+      "matched_payment_ids": [
+        "pay_37bb3eec"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 88096,
+      "bank_credit_amount_paise": 88096
+    },
+    {
+      "bank_credit_id": "bc_82010c62",
+      "matched_payment_ids": [
+        "pay_80bacd64"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 38630,
+      "bank_credit_amount_paise": 38630
+    },
+    {
+      "bank_credit_id": "bc_f10c718b",
+      "matched_payment_ids": [
+        "pay_98543881"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 441017,
+      "bank_credit_amount_paise": 441017
+    },
+    {
+      "bank_credit_id": "bc_50fd9d3f",
+      "matched_payment_ids": [
+        "pay_9e8fc965"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 298303,
+      "bank_credit_amount_paise": 298303
+    },
+    {
+      "bank_credit_id": "bc_750cab75",
+      "matched_payment_ids": [
+        "pay_3d1a85dd"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 141787,
+      "bank_credit_amount_paise": 141787
+    },
+    {
+      "bank_credit_id": "bc_89a2688b",
+      "matched_payment_ids": [
+        "pay_02627f73"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 480373,
+      "bank_credit_amount_paise": 480373
+    },
+    {
+      "bank_credit_id": "bc_48f4ef12",
+      "matched_payment_ids": [
+        "pay_eeea163e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 265983,
+      "bank_credit_amount_paise": 265983
+    },
+    {
+      "bank_credit_id": "bc_0200b1f0",
+      "matched_payment_ids": [
+        "pay_b41b3143"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 231681,
+      "bank_credit_amount_paise": 231681
+    },
+    {
+      "bank_credit_id": "bc_1d8cbbac",
+      "matched_payment_ids": [
+        "pay_ee87905e"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 423669,
+      "bank_credit_amount_paise": 423669
+    },
+    {
+      "bank_credit_id": "bc_295d6fbf",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 60708
+    },
+    {
+      "bank_credit_id": "bc_d5a804eb",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 96640
+    },
+    {
+      "bank_credit_id": "bc_0ab54bde",
+      "matched_payment_ids": [
+        "pay_951f58d0"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 48320,
+      "bank_credit_amount_paise": 48320
+    },
+    {
+      "bank_credit_id": "bc_4eea04e7",
+      "matched_payment_ids": [
+        "pay_aabc25fa"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 48320,
+      "bank_credit_amount_paise": 48320
+    },
+    {
+      "bank_credit_id": "bc_35c7936c",
+      "matched_payment_ids": [
+        "pay_eededb07"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 77312,
+      "bank_credit_amount_paise": 77312
+    },
+    {
+      "bank_credit_id": "bc_dd56cc94",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 86076
+    },
+    {
+      "bank_credit_id": "bc_2dea9493",
+      "matched_payment_ids": [
+        "pay_ccc56569"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 72480,
+      "bank_credit_amount_paise": 72480
+    },
+    {
+      "bank_credit_id": "bc_c991603f",
+      "matched_payment_ids": [
+        "pay_bc2cbb0d"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 24160,
+      "bank_credit_amount_paise": 24160
+    },
+    {
+      "bank_credit_id": "bc_33173470",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 108623
+    },
+    {
+      "bank_credit_id": "bc_f94d6204",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 28320
+    },
+    {
+      "bank_credit_id": "bc_dd334cc7",
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 33000
+    }
+  ],
+  "real_score": {
+    "true_positives": 46,
+    "false_positives": 2,
+    "false_negatives": 2,
+    "precision": 0.9583,
+    "recall": 0.9583,
+    "f1": 0.9583
+  },
+  "naive_score": {
+    "true_positives": 46,
+    "false_positives": 1,
+    "false_negatives": 3,
+    "precision": 0.9787,
+    "recall": 0.9388,
+    "f1": 0.9583
+  },
+  "unmatched_bank_credit_ids": [
+    "bc_0ab54bde",
+    "bc_4eea04e7",
+    "bc_dd56cc94",
+    "bc_f94d6204",
+    "bc_dd334cc7"
+  ]
+}
