@@ -1,5 +1,5 @@
 {
-  "projection_generated_at": "2026-08-29T11:09:40.492040",
+  "projection_generated_at": "2026-08-29T15:38:06.135684",
   "total_pending_inflows_gross_paise": 65000,
   "total_estimated_deductions_paise": 2184,
   "total_expected_inflows_net_paise": 62816,
@@ -34,7 +34,7 @@
   ],
   "pending_outflow_items": [
     {
-      "refund_id": "ref_59e4b671",
+      "refund_id": "ref_4774bc58",
       "payment_id": "pay_060edf5b",
       "created_at": "2026-09-17T10:00:00",
       "amount_paise": 12000,

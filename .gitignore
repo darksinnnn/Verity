@@ -37,8 +37,12 @@ venv.bak/
 *.sqlite3
 finance.db
 
-# Generated data files
+# Generated data files (regenerable per pipeline run)
 ground_truth.json
+matching_results.json
+delta_explanations.json
+exceptions_report.json
+forecast_report.json
 
 # Pytest / Coverage
 .pytest_cache/

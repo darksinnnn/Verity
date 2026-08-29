@@ -1,0 +1,59 @@
+@import "../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: var(--bg-base);
+  color: var(--ink-primary);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for Ledger Panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--divider);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}
+
+/* Monospace evidence styling */
+.evidence-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+  letter-spacing: -0.02em;
+}
+
+/* High-contrast table rules */
+.forensic-table th {
+  border-bottom: 1px solid var(--divider);
+  color: var(--ink-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.forensic-table td {
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Muted focus ring for inputs */
+input:focus, textarea:focus, button:focus-visible {
+  outline: 1px solid var(--accent-amber);
+  outline-offset: 1px;
+}

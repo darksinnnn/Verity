@@ -1,0 +1,18 @@
+/* 
+  styles/tokens.css
+  Exact Design Tokens from UI_DESIGN.md §3 (Single Source of Truth)
+*/
+
+:root {
+  --bg-base: #0A0908;
+  --bg-raised: #141210;
+  --bg-inset: #1C1916;
+  --ink-primary: #F2ECE4;
+  --ink-secondary: #A39C8F;
+  --ink-muted: #6B655A;
+  --accent-amber: #D98E3B;
+  --status-proven: #5C7A5E;
+  --status-probable: #C99A44;
+  --status-unresolved: #8C4A42;
+  --divider: #2A2620;
+}

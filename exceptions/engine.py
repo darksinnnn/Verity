@@ -247,11 +247,16 @@ def build_exceptions(
 def save_exceptions_to_db(conn: sqlite3.Connection, exceptions: list[ExceptionItem]) -> None:
     """
     Inserts validated exception items into the `exceptions` table in SQLite.
+    Clears previous exception records for the batch to ensure idempotence.
     """
+    if exceptions:
+        batch_id = exceptions[0]["batch_id"]
+        conn.execute("DELETE FROM exceptions WHERE batch_id = ?", (batch_id,))
+
     for exc in exceptions:
         validate_exception_item(exc)
         conn.execute("""
-            INSERT OR REPLACE INTO exceptions (
+            INSERT INTO exceptions (
                 id, batch_id, related_record_type, related_record_id,
                 status, explanation_text, hypotheses_json, amount_at_risk, created_at
             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -267,3 +272,4 @@ def save_exceptions_to_db(conn: sqlite3.Connection, exceptions: list[ExceptionIt
             exc["created_at"],
         ))
     conn.commit()
+

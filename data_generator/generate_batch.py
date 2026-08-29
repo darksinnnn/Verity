@@ -106,7 +106,8 @@ def main():
     s_date = generate_date(trap_date, offset_days=1)
     records['settlements'].append((s_id, utr, total_gross, total_net, s_date))
     for pid in p_ids:
-        records['settlement_items'].append((generate_id("si"), s_id, pid, 0))
+        p_row = next(p for p in records['payments'] if p[0] == pid)
+        records['settlement_items'].append((generate_id("si"), s_id, pid, p_row[2]))
     bc_id = generate_id("bc")
     records['bank_credits'].append((bc_id, f"NEFT-{utr}-BULK", total_net, s_date, None))
     ground_truth.append({
@@ -209,14 +210,14 @@ def main():
     # Second bank credit is short by the 20000 refund from p_id
     net_amt2 = amt2 - mdr2 - gst2 - tds2 - 20000
     utr2 = f"UTR{random.randint(10000000, 99999999)}"
-    bc_id2 = generate_id("bc")
-    records['bank_credits'].append((bc_id2, f"NEFT-{utr2}-SHORT", net_amt2, generate_date(trap_date, offset_days=3), None))
+    bc_id_short = generate_id("bc")
+    records['bank_credits'].append((bc_id_short, f"NEFT-{utr2}-SHORT", net_amt2, generate_date(trap_date, offset_days=3), None))
     
     ground_truth.append({
         'type': 'Refund after settlement (Full)', 'is_trap': False, 'bank_credit_id': bc_id, 'expected_payment_ids': [p_id], 'expected_status': 'PROVEN'
     })
     ground_truth.append({
-        'type': 'Refund after settlement (Short)', 'is_trap': True, 'bank_credit_id': bc_id2, 'expected_payment_ids': [p_id2], 'expected_status': 'PROBABLE'
+        'type': 'Refund after settlement (Short)', 'is_trap': True, 'bank_credit_id': bc_id_short, 'expected_payment_ids': [p_id2], 'expected_status': 'PROBABLE'
     })
 
     # 6. Wrong TDS section rate
@@ -375,7 +376,6 @@ def main():
     records['settlement_items'].append((generate_id("si"), s_id_rb, p_id_ref_base, amt_ref_base))
     bc_id_rb = generate_id("bc")
     records['bank_credits'].append((bc_id_rb, f"NEFT-{utr_rb}", net_rb, s_date_rb, None))
-    records['ledger_entries'].append((generate_id("leg"), 'bank_credit', bc_id_rb, net_rb, 'debit'))
     # Now issue a pending refund against this settled payment — not yet recovered
     r_id_pend = generate_id("ref")
     refund_amt_pend = 12000  # Rs.120 pending refund
@@ -407,11 +407,17 @@ def main():
             if p_row is None:
                 continue
             p_gross = p_row[2]
+            # Use this payment's ACTUAL recorded fees, not an assumed zero-deduction
+            # net==gross — several trap payments (Wrong TDS, Unexplainable gap,
+            # Truncated narration, Refund, Duplicate) already have real fee rows,
+            # and net_amount must agree with them.
+            total_fees_for_pid = sum(f[4] for f in records['fees'] if f[1] == pid)
+            p_net = p_gross - total_fees_for_pid
             # Build a minimal settlement record
             s_id = generate_id("set")
             utr_si = f"UTR{random.randint(10000000, 99999999)}"
             s_date_si = generate_date(trap_date, offset_days=1)
-            records['settlements'].append((s_id, utr_si, p_gross, p_gross, s_date_si))
+            records['settlements'].append((s_id, utr_si, p_gross, p_net, s_date_si))
             records['settlement_items'].append((generate_id("si"), s_id, pid, p_gross))
             already_settled_pids.add(pid)
 
@@ -421,6 +427,9 @@ def main():
     cursor = conn.cursor()
     for table in records.keys():
         cursor.execute(f"DELETE FROM {table}")
+    cursor.execute("DELETE FROM exceptions")
+    cursor.execute("DELETE FROM audit_log")
+
     
     # Insert records
     for table, rows in records.items():
