@@ -110,19 +110,30 @@ def subset_sum_dp(
             new_sum = current_sum + net
             if new_sum > upper_bound:
                 continue  # pruned: already over the ceiling
+            candidate_tuple = current_ids + (pid,)
             if new_sum not in reachable and new_sum not in new_reachable:
-                new_reachable[new_sum] = current_ids + (pid,)
+                new_reachable[new_sum] = candidate_tuple
+            elif new_sum in reachable and len(candidate_tuple) < len(reachable[new_sum]):
+                reachable[new_sum] = candidate_tuple
+            elif new_sum in new_reachable and len(candidate_tuple) < len(new_reachable[new_sum]):
+                new_reachable[new_sum] = candidate_tuple
         reachable.update(new_reachable)
 
     # Find the best matching sum within [lower_bound, upper_bound].
+    # Tie-breaking: prefer closer sum to target; if tied, prefer fewer payments (Occam's razor: 1:1 > N:1).
     best_sum = None
     best_ids = None
     for s, ids in reachable.items():
         if lower_bound <= s <= upper_bound and len(ids) > 0:
-            # Prefer the sum closest to target_paise.
-            if best_sum is None or abs(s - target_paise) < abs(best_sum - target_paise):
+            delta = abs(s - target_paise)
+            if best_sum is None:
                 best_sum = s
                 best_ids = ids
+            else:
+                best_delta = abs(best_sum - target_paise)
+                if delta < best_delta or (delta == best_delta and len(ids) < len(best_ids)):
+                    best_sum = s
+                    best_ids = ids
 
     if best_ids is None:
         return None

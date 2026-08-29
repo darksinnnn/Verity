@@ -1,0 +1,45 @@
+{
+  "projection_generated_at": "2026-08-29T11:09:40.492040",
+  "total_pending_inflows_gross_paise": 65000,
+  "total_estimated_deductions_paise": 2184,
+  "total_expected_inflows_net_paise": 62816,
+  "total_pending_outflows_paise": 12000,
+  "net_projected_cash_position_paise": 50816,
+  "inflows_by_method": {
+    "UPI": 62816
+  },
+  "daily_projections": [
+    {
+      "date": "2026-09-17",
+      "gross_inflows_paise": 65000,
+      "estimated_fees_paise": 2184,
+      "net_inflows_paise": 62816,
+      "pending_outflows_paise": 12000,
+      "net_projected_cash_paise": 50816
+    }
+  ],
+  "pending_inflow_items": [
+    {
+      "payment_id": "pay_4e20fd1a",
+      "order_id": "ord_598336e3",
+      "method": "UPI",
+      "captured_at": "2026-09-16T11:00:00",
+      "expected_settlement_date": "2026-09-17",
+      "gross_amount_paise": 65000,
+      "estimated_mdr_paise": 1300,
+      "estimated_gst_paise": 234,
+      "estimated_tds_paise": 650,
+      "estimated_net_inflow_paise": 62816
+    }
+  ],
+  "pending_outflow_items": [
+    {
+      "refund_id": "ref_59e4b671",
+      "payment_id": "pay_060edf5b",
+      "created_at": "2026-09-17T10:00:00",
+      "amount_paise": 12000,
+      "status": "pending",
+      "reason": "Pending merchant refund recovery for payment pay_060edf5b"
+    }
+  ]
+}

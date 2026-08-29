@@ -1,0 +1,3 @@
+"""
+forecaster package
+"""

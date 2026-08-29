@@ -149,3 +149,36 @@ def test_matchers_against_synthetic_batch():
 
     print(f"\nReal solver   — Precision: {real_score['precision']}, Recall: {real_score['recall']}, F1: {real_score['f1']}")
     print(f"Naive baseline — Precision: {naive_score['precision']}, Recall: {naive_score['recall']}, F1: {naive_score['f1']}")
+
+
+def test_missing_ledger_downgrades_to_probable():
+    """
+    Explicitly assert that a payment with matching amount but no ledger_entries
+    row resolves to PROBABLE with reason MISSING_LEDGER_ENTRY under the 3-state model.
+    """
+    db_path = "finance.db"
+    gt_path = "ground_truth.json"
+
+    if not os.path.exists(db_path) or not os.path.exists(gt_path):
+        import pytest
+        pytest.skip("Synthetic batch not generated yet")
+
+    with open(gt_path) as f:
+        ground_truth = json.load(f)
+
+    missing_record_gt = next((g for g in ground_truth if g.get("type") == "Missing record"), None)
+    assert missing_record_gt is not None, "Missing record trap not found in ground_truth.json"
+    assert missing_record_gt["expected_status"] == "PROBABLE"
+
+    conn = sqlite3.connect(db_path)
+    real_results = run_real_matcher(conn)
+    conn.close()
+
+    bc_id = missing_record_gt["bank_credit_id"]
+    match = next((r for r in real_results if r["bank_credit_id"] == bc_id), None)
+    assert match is not None, f"Bank credit {bc_id} was not returned by real matcher"
+    assert match["status"] == "PROBABLE", f"Expected PROBABLE, got {match['status']}"
+    assert match["reason"] == "MISSING_LEDGER_ENTRY"
+    assert len(match["missing_evidence"]) > 0
+    assert "ledger_entries row" in match["missing_evidence"][0]
+

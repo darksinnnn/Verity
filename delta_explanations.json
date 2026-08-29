@@ -1,0 +1,66 @@
+[
+  {
+    "bank_credit_id": "bc_4eea04e7",
+    "candidate_payment_id": "pay_bfddc3d9",
+    "bank_credit_amount_paise": 53152,
+    "candidate_gross_paise": 90000,
+    "standard_net_paise": 86976,
+    "delta_paise": 33824,
+    "status": "UNRESOLVED",
+    "explanation_text": "Unexplained variance on bc_4eea04e7: Bank credit of Rs.531.52 has an unexplained gap of Rs.338.24. No known tax section, MDR rate variation, or refund record accounts for the difference between received credit and candidate payments.",
+    "hypotheses": []
+  },
+  {
+    "bank_credit_id": "bc_dd56cc94",
+    "candidate_payment_id": "pay_bfddc3d9",
+    "bank_credit_amount_paise": 86076,
+    "candidate_gross_paise": 90000,
+    "standard_net_paise": 86976,
+    "delta_paise": 900,
+    "status": "PROBABLE",
+    "explanation_text": "Plausible explanation found: TDS was deducted at 2.0% under Section 194C / Section 194J(1) rather than standard 1.0% (2.0% TDS deduction (Contractor/Technical Services)). Amount gap of Rs.9.00 matches expected variance. Verification requires: Vendor TDS Certificate (Form 16A) or settlement deduction statement confirming Section 194C / Section 194J(1).",
+    "hypotheses": [
+      {
+        "hypothesis": "TDS was deducted at 2.0% under Section 194C / Section 194J(1) rather than standard 1.0% (2.0% TDS deduction (Contractor/Technical Services))",
+        "category": "TAX_RATE_VARIANCE",
+        "calculated_delta_paise": 900,
+        "observed_delta_paise": 900,
+        "discrepancy_paise": 0,
+        "evidence_needed": "Vendor TDS Certificate (Form 16A) or settlement deduction statement confirming Section 194C / Section 194J(1).",
+        "plausibility_rank": 1
+      }
+    ]
+  },
+  {
+    "bank_credit_id": "bc_33173470",
+    "candidate_payment_id": "pay_df465290",
+    "bank_credit_amount_paise": 100968,
+    "candidate_gross_paise": 120000,
+    "standard_net_paise": 115968,
+    "delta_paise": 15000,
+    "status": "UNRESOLVED",
+    "explanation_text": "Unexplained variance on bc_33173470: Bank credit of Rs.1009.68 has an unexplained gap of Rs.150.00. No known tax section, MDR rate variation, or refund record accounts for the difference between received credit and candidate payments.",
+    "hypotheses": []
+  },
+  {
+    "bank_credit_id": "bc_f94d6204",
+    "candidate_payment_id": "pay_aabc25fa",
+    "bank_credit_amount_paise": 28320,
+    "candidate_gross_paise": 50000,
+    "standard_net_paise": 48320,
+    "delta_paise": 20000,
+    "status": "PROBABLE",
+    "explanation_text": "Plausible explanation found: Settlement was short by Rs.200.00 due to cross-settlement recovery of refund on payment pay_eededb07. Amount gap of Rs.200.00 matches expected variance. Verification requires: Settlement advice confirming refund deduction against refund ID ref_ae9bec36.",
+    "hypotheses": [
+      {
+        "hypothesis": "Settlement was short by Rs.200.00 due to cross-settlement recovery of refund on payment pay_eededb07",
+        "category": "REFUND_RECOVERY",
+        "calculated_delta_paise": 20000,
+        "observed_delta_paise": 20000,
+        "discrepancy_paise": 0,
+        "evidence_needed": "Settlement advice confirming refund deduction against refund ID ref_ae9bec36.",
+        "plausibility_rank": 2
+      }
+    ]
+  }
+]

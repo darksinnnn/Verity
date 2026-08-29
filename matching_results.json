@@ -6,9 +6,13 @@
         "pay_bdd640fb"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 333645,
       "bank_credit_amount_paise": 333645,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_06cb0fb3",
@@ -16,9 +20,13 @@
         "pay_0822e8f3"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 285987,
       "bank_credit_amount_paise": 285987,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_ce4a2bbd",
@@ -26,9 +34,13 @@
         "pay_6b65a6a4"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 110411,
       "bank_credit_amount_paise": 110411,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_17be3111",
@@ -36,9 +48,13 @@
         "pay_47229389"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 363393,
       "bank_credit_amount_paise": 363393,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_1ff49b78",
@@ -46,9 +62,13 @@
         "pay_9a8dca03"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 58668,
       "bank_credit_amount_paise": 58668,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_3139d32c",
@@ -56,9 +76,13 @@
         "pay_8d5288f1"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 476967,
       "bank_credit_amount_paise": 476967,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_19db3ad0",
@@ -66,9 +90,13 @@
         "pay_c5e7ce8a"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 44906,
       "bank_credit_amount_paise": 44906,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_efc89849",
@@ -76,9 +104,13 @@
         "pay_29a3b2e9"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 150507,
       "bank_credit_amount_paise": 150507,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_fd5166e6",
@@ -86,9 +118,13 @@
         "pay_88bd6407"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 338006,
       "bank_credit_amount_paise": 338006,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_d261a7ab",
@@ -96,9 +132,13 @@
         "pay_af42e12f"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 333936,
       "bank_credit_amount_paise": 333936,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_b7c93acf",
@@ -106,9 +146,13 @@
         "pay_448aaa9e"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 417559,
       "bank_credit_amount_paise": 417559,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_23bed01d",
@@ -116,9 +160,13 @@
         "pay_654821d0"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 117397,
       "bank_credit_amount_paise": 117397,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_5cabcc97",
@@ -126,9 +174,13 @@
         "pay_434308bc"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 387131,
       "bank_credit_amount_paise": 387131,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_28f49481",
@@ -136,9 +188,13 @@
         "pay_1745d6d8"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 79753,
       "bank_credit_amount_paise": 79753,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_f89897b9",
@@ -146,9 +202,13 @@
         "pay_62801c45"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 354446,
       "bank_credit_amount_paise": 354446,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_444ea7c8",
@@ -156,9 +216,13 @@
         "pay_ae270da7"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 445799,
       "bank_credit_amount_paise": 445799,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_8026695f",
@@ -166,9 +230,13 @@
         "pay_4b22d308"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 334423,
       "bank_credit_amount_paise": 334423,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_32ebd689",
@@ -176,9 +244,13 @@
         "pay_deda4e16"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 100183,
       "bank_credit_amount_paise": 100183,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_52fbe43b",
@@ -186,9 +258,13 @@
         "pay_8a14be62"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 199117,
       "bank_credit_amount_paise": 199117,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_3da9c2a9",
@@ -196,9 +272,13 @@
         "pay_e0f3eab0"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 19533,
       "bank_credit_amount_paise": 19533,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_2031d750",
@@ -206,9 +286,13 @@
         "pay_15ed6269"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 297129,
       "bank_credit_amount_paise": 297129,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_8a0f4efb",
@@ -216,9 +300,13 @@
         "pay_43dac043"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 343943,
       "bank_credit_amount_paise": 343943,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_702753a1",
@@ -226,9 +314,13 @@
         "pay_b683d2e6"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 379502,
       "bank_credit_amount_paise": 379502,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_3ae8cc93",
@@ -236,9 +328,13 @@
         "pay_3f76be1d"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 271906,
       "bank_credit_amount_paise": 271906,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_5496f63c",
@@ -246,9 +342,13 @@
         "pay_b535106e"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 121243,
       "bank_credit_amount_paise": 121243,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_7900f7f9",
@@ -256,9 +356,13 @@
         "pay_ab4220a7"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 270173,
       "bank_credit_amount_paise": 270173,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_693dffbc",
@@ -266,9 +370,13 @@
         "pay_30beb45f"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 407210,
       "bank_credit_amount_paise": 407210,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_ba6c34ab",
@@ -276,9 +384,13 @@
         "pay_ac619e63"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 447348,
       "bank_credit_amount_paise": 447348,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_2ef91276",
@@ -286,9 +398,13 @@
         "pay_3fa7f104"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 415304,
       "bank_credit_amount_paise": 415304,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_a6f2f7b8",
@@ -296,9 +412,13 @@
         "pay_71710434"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 244065,
       "bank_credit_amount_paise": 244065,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_680ac07a",
@@ -306,9 +426,13 @@
         "pay_f8102383"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 283565,
       "bank_credit_amount_paise": 283565,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_ed3049cf",
@@ -316,9 +440,13 @@
         "pay_e7067ef4"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 253556,
       "bank_credit_amount_paise": 253556,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_b7e99aca",
@@ -326,9 +454,13 @@
         "pay_6c4a37ea"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 407468,
       "bank_credit_amount_paise": 407468,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_bf7b539b",
@@ -336,9 +468,13 @@
         "pay_37bb3eec"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 88096,
       "bank_credit_amount_paise": 88096,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_82010c62",
@@ -346,9 +482,13 @@
         "pay_80bacd64"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 38630,
       "bank_credit_amount_paise": 38630,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_f10c718b",
@@ -356,9 +496,13 @@
         "pay_98543881"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 441017,
       "bank_credit_amount_paise": 441017,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_50fd9d3f",
@@ -366,9 +510,13 @@
         "pay_9e8fc965"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 298303,
       "bank_credit_amount_paise": 298303,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_750cab75",
@@ -376,9 +524,13 @@
         "pay_3d1a85dd"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 141787,
       "bank_credit_amount_paise": 141787,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_89a2688b",
@@ -386,9 +538,13 @@
         "pay_02627f73"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 480373,
       "bank_credit_amount_paise": 480373,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_48f4ef12",
@@ -396,9 +552,13 @@
         "pay_eeea163e"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 265983,
       "bank_credit_amount_paise": 265983,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_0200b1f0",
@@ -406,9 +566,13 @@
         "pay_b41b3143"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 231681,
       "bank_credit_amount_paise": 231681,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_1d8cbbac",
@@ -416,9 +580,13 @@
         "pay_ee87905e"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 423669,
       "bank_credit_amount_paise": 423669,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_295d6fbf",
@@ -428,36 +596,54 @@
         "pay_d450281c"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 60708,
       "bank_credit_amount_paise": 60708,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_d5a804eb",
       "matched_payment_ids": [
-        "pay_951f58d0",
-        "pay_aabc25fa"
+        "pay_8d3aed99",
+        "pay_b4a69f3c"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 96640,
       "bank_credit_amount_paise": 96640,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     },
     {
       "bank_credit_id": "bc_0ab54bde",
-      "matched_payment_ids": [],
-      "status": "UNMATCHED",
-      "matched_sum_paise": null,
-      "bank_credit_amount_paise": 48320,
-      "epsilon_pct_used": null
+      "matched_payment_ids": [
+        "pay_951f58d0"
+      ],
+      "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
+      "matched_sum_paise": 53152,
+      "bank_credit_amount_paise": 53152,
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_4eea04e7",
       "matched_payment_ids": [],
       "status": "UNMATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": null,
-      "bank_credit_amount_paise": 48320,
-      "epsilon_pct_used": null
+      "bank_credit_amount_paise": 53152,
+      "epsilon_pct_used": null,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_35c7936c",
@@ -465,17 +651,25 @@
         "pay_eededb07"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 77312,
       "bank_credit_amount_paise": 77312,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_dd56cc94",
       "matched_payment_ids": [],
       "status": "UNMATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": null,
       "bank_credit_amount_paise": 86076,
-      "epsilon_pct_used": null
+      "epsilon_pct_used": null,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_2dea9493",
@@ -483,46 +677,84 @@
         "pay_ccc56569"
       ],
       "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": 72480,
       "bank_credit_amount_paise": 72480,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_c991603f",
       "matched_payment_ids": [
         "pay_bc2cbb0d"
       ],
-      "status": "MATCHED",
+      "status": "PROBABLE",
+      "reason": "MISSING_LEDGER_ENTRY",
+      "missing_evidence": [
+        "ledger_entries row for pay_bc2cbb0d"
+      ],
       "matched_sum_paise": 24160,
       "bank_credit_amount_paise": 24160,
-      "epsilon_pct_used": 0.0
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [
+        "pay_bc2cbb0d"
+      ],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_33173470",
-      "matched_payment_ids": [
-        "pay_bfddc3d9",
-        "pay_ecab3301"
-      ],
-      "status": "MATCHED",
-      "matched_sum_paise": 104976,
-      "bank_credit_amount_paise": 108623,
-      "epsilon_pct_used": 99.97
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "reason": null,
+      "missing_evidence": [],
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 100968,
+      "epsilon_pct_used": null,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_f94d6204",
       "matched_payment_ids": [],
       "status": "UNMATCHED",
+      "reason": null,
+      "missing_evidence": [],
       "matched_sum_paise": null,
       "bank_credit_amount_paise": 28320,
-      "epsilon_pct_used": null
+      "epsilon_pct_used": null,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
     },
     {
       "bank_credit_id": "bc_dd334cc7",
-      "matched_payment_ids": [],
-      "status": "UNMATCHED",
-      "matched_sum_paise": null,
+      "matched_payment_ids": [
+        "pay_bc8f7d29",
+        "pay_ecab3301"
+      ],
+      "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
+      "matched_sum_paise": 33000,
       "bank_credit_amount_paise": 33000,
-      "epsilon_pct_used": null
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": false
+    },
+    {
+      "bank_credit_id": "bc_c5f8bc16",
+      "matched_payment_ids": [
+        "pay_060edf5b"
+      ],
+      "status": "MATCHED",
+      "reason": null,
+      "missing_evidence": [],
+      "matched_sum_paise": 43488,
+      "bank_credit_amount_paise": 43488,
+      "epsilon_pct_used": 0.0,
+      "missing_ledger_payment_ids": [],
+      "utr_anchored": true
     }
   ],
   "naive_results": [
@@ -924,17 +1156,15 @@
         "pay_951f58d0"
       ],
       "status": "MATCHED",
-      "matched_sum_paise": 48320,
-      "bank_credit_amount_paise": 48320
+      "matched_sum_paise": 53152,
+      "bank_credit_amount_paise": 53152
     },
     {
       "bank_credit_id": "bc_4eea04e7",
-      "matched_payment_ids": [
-        "pay_aabc25fa"
-      ],
-      "status": "MATCHED",
-      "matched_sum_paise": 48320,
-      "bank_credit_amount_paise": 48320
+      "matched_payment_ids": [],
+      "status": "UNMATCHED",
+      "matched_sum_paise": null,
+      "bank_credit_amount_paise": 53152
     },
     {
       "bank_credit_id": "bc_35c7936c",
@@ -975,7 +1205,7 @@
       "matched_payment_ids": [],
       "status": "UNMATCHED",
       "matched_sum_paise": null,
-      "bank_credit_amount_paise": 108623
+      "bank_credit_amount_paise": 100968
     },
     {
       "bank_credit_id": "bc_f94d6204",
@@ -990,29 +1220,39 @@
       "status": "UNMATCHED",
       "matched_sum_paise": null,
       "bank_credit_amount_paise": 33000
+    },
+    {
+      "bank_credit_id": "bc_c5f8bc16",
+      "matched_payment_ids": [
+        "pay_060edf5b"
+      ],
+      "status": "MATCHED",
+      "matched_sum_paise": 43488,
+      "bank_credit_amount_paise": 43488
     }
   ],
   "real_score": {
-    "true_positives": 46,
-    "false_positives": 2,
-    "false_negatives": 2,
-    "precision": 0.9583,
-    "recall": 0.9583,
-    "f1": 0.9583
+    "true_positives": 49,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "probable_correct": 1,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
   },
   "naive_score": {
     "true_positives": 46,
     "false_positives": 1,
     "false_negatives": 3,
+    "probable_correct": 0,
     "precision": 0.9787,
     "recall": 0.9388,
     "f1": 0.9583
   },
   "unmatched_bank_credit_ids": [
-    "bc_0ab54bde",
     "bc_4eea04e7",
     "bc_dd56cc94",
-    "bc_f94d6204",
-    "bc_dd334cc7"
+    "bc_33173470",
+    "bc_f94d6204"
   ]
 }

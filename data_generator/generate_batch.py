@@ -145,7 +145,7 @@ def main():
     })
 
     # 4. Duplicate (same payment recorded twice)
-    dup_amt = 50000
+    dup_amt = 55000
     o_id = generate_id("ord")
     p_id = generate_id("pay")
     records['orders'].append((o_id, dup_amt, trap_date.isoformat(), "cust_dup"))
@@ -295,9 +295,13 @@ def main():
     utr = f"UTR{random.randint(10000000, 99999999)}"
     records['bank_credits'].append((bc_id, f"NEFT-{utr}", net_amt, generate_date(trap_date, offset_days=1), None))
     ground_truth.append({
-        'type': 'Missing record', 'is_trap': True, 'bank_credit_id': bc_id, 'expected_payment_ids': [p_id], 'expected_status': 'PROVEN' 
-        # Wait, if ledger entry is missing, it still reconciles at the bank credit vs payment level.
-        # So PROVEN is correct. The exception would be flagged separately if we reconcile ledger entries, but the matcher focuses on bank credits.
+        'type': 'Missing record',
+        'is_trap': True,
+        'bank_credit_id': bc_id,
+        'expected_payment_ids': [p_id],
+        # Amount matches payment in DB, but ledger_entries row is absent.
+        # Under the strict 3-state system, this is PROBABLE (strong arithmetic evidence, missing audit proof).
+        'expected_status': 'PROBABLE'
     })
 
     # 10. Genuinely unexplainable gap
@@ -311,7 +315,7 @@ def main():
         (generate_id("fee"), p_id, 'MDR', MDR_RATE, mdr), (generate_id("fee"), p_id, 'GST_ON_MDR', GST_ON_MDR_RATE, gst), (generate_id("fee"), p_id, 'TDS', TDS_RATE, tds)
     ])
     records['ledger_entries'].append((generate_id("leg"), 'payment', p_id, amt, 'credit'))
-    net_amt = amt - mdr - gst - tds - 7345 # random gap
+    net_amt = amt - mdr - gst - tds - 15000  # gap must exceed tolerance window width to stay UNRESOLVED
     bc_id = generate_id("bc")
     utr = f"UTR{random.randint(10000000, 99999999)}"
     records['bank_credits'].append((bc_id, f"NEFT-{utr}", net_amt, generate_date(trap_date, offset_days=1), None))
@@ -319,9 +323,101 @@ def main():
         'type': 'Genuinely unexplainable gap', 'is_trap': True, 'bank_credit_id': bc_id, 'expected_payment_ids': [p_id], 'expected_status': 'UNRESOLVED'
     })
 
+    # 11. Pending captured payment (T+1 settlement not yet arrived)
+    # Captured on trap_date+3, no settlement_items row, no bank_credit.
+    # This is the canonical Phase 6 case: money in, settlement pending.
+    amt_pend = 65000
+    o_id_pend = generate_id("ord")
+    p_id_pend = generate_id("pay")
+    records['orders'].append((o_id_pend, amt_pend, (trap_date + datetime.timedelta(days=3)).isoformat(), "cust_pending"))
+    records['payments'].append((p_id_pend, o_id_pend, amt_pend, generate_date(trap_date, offset_days=3, offset_hours=1), "UPI"))
+    mdr_pend = int(amt_pend * MDR_RATE); gst_pend = int(mdr_pend * GST_ON_MDR_RATE); tds_pend = int(amt_pend * TDS_RATE)
+    records['fees'].extend([
+        (generate_id("fee"), p_id_pend, 'MDR', MDR_RATE, mdr_pend),
+        (generate_id("fee"), p_id_pend, 'GST_ON_MDR', GST_ON_MDR_RATE, gst_pend),
+        (generate_id("fee"), p_id_pend, 'TDS', TDS_RATE, tds_pend),
+    ])
+    records['ledger_entries'].append((generate_id("leg"), 'payment', p_id_pend, amt_pend, 'credit'))
+    # Deliberately: NO settlement, NO settlement_items, NO bank_credit.
+    # This payment is awaiting T+1 settlement arrival.
+    ground_truth.append({
+        'type': 'Pending captured payment (awaiting T+1 settlement)',
+        'is_trap': False,
+        'bank_credit_id': None,  # No bank credit yet
+        'expected_payment_ids': [p_id_pend],
+        'expected_status': 'PENDING_SETTLEMENT'
+    })
+
+    # 12. Pending refund obligation (issued but not yet recovered from settlement)
+    # Attached to a *previously-settled* base transaction. Status='pending'.
+    # Phase 6 should count this as a future outflow obligation.
+    #
+    # We attach it to the very first normal payment (p_id from add_normal_transaction).
+    # But we don't have that p_id here — instead we create a standalone base payment
+    # that is fully settled, then issue a pending refund against it.
+    amt_ref_base = 45000
+    o_id_ref = generate_id("ord")
+    p_id_ref_base = generate_id("pay")
+    records['orders'].append((o_id_ref, amt_ref_base, (trap_date + datetime.timedelta(days=2)).isoformat(), "cust_refpend"))
+    records['payments'].append((p_id_ref_base, o_id_ref, amt_ref_base, generate_date(trap_date, offset_days=2, offset_hours=1), "UPI"))
+    mdr_rb = int(amt_ref_base * MDR_RATE); gst_rb = int(mdr_rb * GST_ON_MDR_RATE); tds_rb = int(amt_ref_base * TDS_RATE)
+    records['fees'].extend([
+        (generate_id("fee"), p_id_ref_base, 'MDR', MDR_RATE, mdr_rb),
+        (generate_id("fee"), p_id_ref_base, 'GST_ON_MDR', GST_ON_MDR_RATE, gst_rb),
+        (generate_id("fee"), p_id_ref_base, 'TDS', TDS_RATE, tds_rb),
+    ])
+    records['ledger_entries'].append((generate_id("leg"), 'payment', p_id_ref_base, amt_ref_base, 'credit'))
+    net_rb = amt_ref_base - mdr_rb - gst_rb - tds_rb
+    s_id_rb = generate_id("set")
+    utr_rb = f"UTR{random.randint(10000000, 99999999)}"
+    s_date_rb = generate_date(trap_date, offset_days=3)
+    records['settlements'].append((s_id_rb, utr_rb, amt_ref_base, net_rb, s_date_rb))
+    records['settlement_items'].append((generate_id("si"), s_id_rb, p_id_ref_base, amt_ref_base))
+    bc_id_rb = generate_id("bc")
+    records['bank_credits'].append((bc_id_rb, f"NEFT-{utr_rb}", net_rb, s_date_rb, None))
+    records['ledger_entries'].append((generate_id("leg"), 'bank_credit', bc_id_rb, net_rb, 'debit'))
+    # Now issue a pending refund against this settled payment — not yet recovered
+    r_id_pend = generate_id("ref")
+    refund_amt_pend = 12000  # Rs.120 pending refund
+    records['refunds'].append((r_id_pend, p_id_ref_base, refund_amt_pend, generate_date(trap_date, offset_days=4), "pending"))
+    ground_truth.append({
+        'type': 'Pending refund obligation (not yet recovered)',
+        'is_trap': False,
+        'bank_credit_id': bc_id_rb,
+        'expected_payment_ids': [p_id_ref_base],
+        'expected_status': 'PROVEN'  # Base payment settled cleanly; refund is a future outflow
+    })
+
+
+
+    # Post-generation pass: create settlement + settlement_items rows for every
+    # trap payment that has a bank_credit in ground_truth but lacks a settlement entry.
+    # Real-world model: if a bank credit arrived, Razorpay's settlement engine ran,
+    # producing both a settlements row and a settlement_items row.
+    # Without this, the forecaster cannot distinguish "trap payment already settled
+    # via bank credit" from "genuinely pending payment with no bank credit yet."
+    gt_with_bc = [g for g in ground_truth if g.get('bank_credit_id') is not None]
+    already_settled_pids = {si[2] for si in records['settlement_items'] if si[2]}
+    for gt_entry in gt_with_bc:
+        for pid in gt_entry.get('expected_payment_ids', []):
+            if pid in already_settled_pids:
+                continue  # Already has a settlement_items row
+            # Find the payment amount
+            p_row = next((p for p in records['payments'] if p[0] == pid), None)
+            if p_row is None:
+                continue
+            p_gross = p_row[2]
+            # Build a minimal settlement record
+            s_id = generate_id("set")
+            utr_si = f"UTR{random.randint(10000000, 99999999)}"
+            s_date_si = generate_date(trap_date, offset_days=1)
+            records['settlements'].append((s_id, utr_si, p_gross, p_gross, s_date_si))
+            records['settlement_items'].append((generate_id("si"), s_id, pid, p_gross))
+            already_settled_pids.add(pid)
 
     # Clear DB tables first
     conn = sqlite3.connect(args.db)
+
     cursor = conn.cursor()
     for table in records.keys():
         cursor.execute(f"DELETE FROM {table}")
