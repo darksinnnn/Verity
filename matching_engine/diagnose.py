@@ -1,4 +1,4 @@
-"""Investigate Phase 3 FP/FN records in detail."""
+"""Standalone diagnostic CLI tool to score and inspect solver matching results against ground truth (TP/FP/FN analysis)."""
 import json, sqlite3, sys, os
 sys.path.insert(0, '.')
 
