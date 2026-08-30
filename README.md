@@ -261,14 +261,8 @@ Verity/
 
 ## Known Limitations & Methodological Disclosures
 
-1. **N:N Combinatorial Settlement Scope**:
-   Verity solves 1:1 and N:1 settlement groupings. Multi-payment to multi-deposit (N:N) splits are deliberately excluded as real payment gateways settle transactions in discrete batched credit advices.
-2. **Synthetic Data Benford Non-Conformity**:
+1. **Synthetic Data Benford Non-Conformity**:
    The current demo batch ($N=58$ payments, $N=54$ credits) fails Benford's Law ($\chi^2 = 21.86$ vs. Critical $\chi^2_{0.05} = 15.51$). This is a documented mathematical consequence of generating synthetic amounts from bounded uniform distributions (`randint(10000, 500000)`), not financial fraud.
-3. **Local Hash-Chain Threat Model**:
+2. **Local Hash-Chain Threat Model**:
    Verity’s SHA-256 hash chain prevents silent in-place modification or record deletion in `finance.db`. Defending against an attacker who recomputes the entire hash chain from genesis requires publishing daily root hashes to an external timestamping service or immutable ledger.
 
----
-
-## License
-MIT License. Built for the **Razorpay AI Buildathon (Track 04 — AI Finance Controller)**.
