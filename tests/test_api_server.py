@@ -109,3 +109,17 @@ def test_api_nudges_and_mocked_dispatch(client):
     receipt = r_disp.json()
     assert receipt["status"] == "MOCKED_DISPATCHED"
     assert receipt["logged_only"] is True
+
+
+def test_api_forensics(client):
+    r = client.get("/api/forensics")
+    assert r.status_code == 200
+    data = r.json()
+    assert "benford_analysis" in data
+    assert "payments_pool" in data["benford_analysis"]
+    assert "credits_pool" in data["benford_analysis"]
+    assert "tolerance_clustering" in data
+    assert "caveats" in data
+    assert "synthetic_sample_size_caveat" in data["caveats"]
+    assert "adversarial_gaming_caveat" in data["caveats"]
+

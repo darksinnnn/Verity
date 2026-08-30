@@ -92,9 +92,10 @@ export function TerminalQA() {
         <div className="flex items-center space-x-2.5">
           <Terminal className="w-4 h-4 text-accent-amber" />
           <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink-primary">
-            SETTLEMENT Q&A AGENT // INTERROGATION TERMINAL
+            SETTLEMENT Q&A AGENT · INTERROGATION TERMINAL
           </span>
         </div>
+
         <div className="flex items-center space-x-2 text-[11px] font-mono text-ink-muted">
           <span className="w-2 h-2 rounded-full bg-status-proven" />
           <span>NON-SYCOPHANTIC GUARDRAIL: ACTIVE</span>

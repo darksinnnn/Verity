@@ -116,7 +116,7 @@ export function ReceiptTape({ initialRecordId = "bc_bd9c66b3", onClose }: Receip
           <select
             value={recordId}
             onChange={(e) => setRecordId(e.target.value)}
-            className="bg-bg-inset border border-divider text-ink-primary text-xs font-mono px-3 py-1.5 rounded-sm focus:border-accent-amber focus:outline-none max-w-[280px]"
+            className="bg-bg-inset border border-divider text-ink-primary text-xs font-mono px-3 py-1.5 rounded-sm focus:border-accent-amber focus:outline-none min-w-[340px] max-w-[440px]"
           >
             <optgroup label="PROVEN CLEAN MATCHES">
               <option value="bc_bd9c66b3">bc_bd9c66b3 (Proven Settlement ₹3,336.45)</option>
@@ -144,12 +144,12 @@ export function ReceiptTape({ initialRecordId = "bc_bd9c66b3", onClose }: Receip
           NO LINEAGE TRACE FOUND FOR {recordId}
         </div>
       ) : (
-        <div className="max-w-2xl mx-auto py-2 relative">
-          {/* Animated vertical connecting line */}
-          <div className="absolute left-[27px] top-6 bottom-6 w-[2px] bg-divider" />
-
-          <div className="space-y-5">
+        <div className="max-w-2xl mx-auto py-2">
+          {/* Steps container with contained vertical timeline connecting line */}
+          <div className="relative space-y-5">
+            <div className="absolute left-[27px] top-6 bottom-6 w-[2px] bg-divider" />
             {lineage.steps.map((step, idx) => (
+
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -10 }}

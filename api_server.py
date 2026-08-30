@@ -21,6 +21,8 @@ from audit_trail.audit_log import AuditTrail, canonical_json
 from forecaster.forecaster import compute_pending_exposure
 from nudges.nudge_engine import generate_all_nudges, dispatch_nudge_mock
 from qa_agent.agent import SettlementQAAgent
+from forensic_layer.analyzer import compute_statistical_forensics
+
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.environ.get("DB_PATH", os.path.join(ROOT_DIR, "finance.db"))
@@ -339,6 +341,16 @@ def get_forecast():
     report = compute_pending_exposure(conn)
     conn.close()
     return report
+
+
+@app.get("/api/forensics")
+def get_forensics():
+    """Returns read-only Benford's Law and tolerance-boundary clustering statistics."""
+    conn = get_db()
+    report = compute_statistical_forensics(conn)
+    conn.close()
+    return report
+
 
 
 @app.get("/api/audit-trail")

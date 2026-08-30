@@ -14,6 +14,7 @@ import { TerminalQA } from "@/components/qa-agent/terminal-qa";
 import { CashSchedule } from "@/components/forecaster/cash-schedule";
 import { HashChainView } from "@/components/audit-trail/hash-chain-view";
 import { NudgeQueue } from "@/components/nudges/nudge-queue";
+import { ForensicsPanel } from "@/components/forensics/forensics-panel";
 import { SectionWipe } from "@/components/transitions/section-wipe";
 import {
   ShieldAlert,
@@ -23,8 +24,10 @@ import {
   Calendar,
   Lock,
   Mail,
+  Activity,
   RefreshCw,
 } from "lucide-react";
+
 import clsx from "clsx";
 
 export default function DashboardPage() {
@@ -77,6 +80,7 @@ export default function DashboardPage() {
     { id: "forecast", num: "05", label: "Cash Forecaster", icon: Calendar },
     { id: "audit", num: "06", label: "Audit Hash-Chain", icon: Lock },
     { id: "nudges", num: "07", label: "Actionable Nudges", icon: Mail },
+    { id: "forensics", num: "08", label: "Statistical Forensics", icon: Activity },
   ];
 
   return (
@@ -87,11 +91,11 @@ export default function DashboardPage() {
           <div className="flex items-center space-x-3">
             <span className="w-3 h-3 bg-accent-amber rounded-sm" />
             <h1 className="font-display font-bold text-2xl sm:text-3xl tracking-tight text-ink-primary">
-              VERITY <span className="text-accent-amber font-light">//</span> FORENSIC FINANCE CONTROLLER
+              VERITY <span className="text-accent-amber font-light">·</span> FORENSIC FINANCE CONTROLLER
             </h1>
           </div>
           <p className="text-xs font-mono text-ink-secondary">
-            AUTONOMOUS SETTLEMENT RECONCILIATION & EVIDENTIARY AUDIT ENGINE (TRACK 04)
+            AUTONOMOUS SETTLEMENT RECONCILIATION &amp; EVIDENTIARY AUDIT ENGINE (TRACK 04)
           </p>
         </div>
 
@@ -112,7 +116,7 @@ export default function DashboardPage() {
       </header>
 
       {/* Case File Navigation Bar */}
-      <nav className="flex items-center space-x-1.5 overflow-x-auto pb-2 border-b border-divider/60 scrollbar-none">
+      <nav className="flex items-center space-x-1 overflow-x-auto pb-2 border-b border-divider/60 scrollbar-none">
         {navTabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -121,7 +125,7 @@ export default function DashboardPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={clsx(
-                "flex items-center space-x-2.5 px-3.5 py-2 text-xs font-mono whitespace-nowrap rounded-sm transition-all border",
+                "flex items-center space-x-1.5 px-2.5 py-1.5 text-[11px] sm:text-xs font-mono whitespace-nowrap rounded-sm transition-all border",
                 isActive
                   ? "bg-bg-raised border-accent-amber/60 text-ink-primary font-medium shadow-sm"
                   : "bg-transparent border-transparent text-ink-muted hover:text-ink-secondary hover:bg-bg-raised/40"
@@ -136,6 +140,8 @@ export default function DashboardPage() {
           );
         })}
       </nav>
+
+
 
       {/* Error Banner */}
       {error && (
@@ -211,7 +217,14 @@ export default function DashboardPage() {
               <NudgeQueue />
             </div>
           )}
+
+          {activeTab === "forensics" && (
+            <div className="space-y-6">
+              <ForensicsPanel />
+            </div>
+          )}
         </SectionWipe>
+
       )}
 
       {/* Forensic Footer */}
