@@ -187,7 +187,48 @@ To execute the 20 attack scenarios (19 active attacks + 1 calibration baseline) 
 ```bash
 python stress_test/run_stress_test.py
 ```
-* **Result**: **20/20 Scenarios Defended** ($100\%$ defense rate with granular paise-level margin tracking).
+* **Result**: **20/20 Scenarios Defended** ($100\%$ defense rate with granular paise-level margin tracking: 19 active attack vectors + 1 zero-delta calibration baseline).
+
+---
+
+## API Endpoints Reference
+
+The FastAPI backend (`api_server.py`) exposes typed REST endpoints consumed by the Next.js control room:
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/overview` | `GET` | Headline KPI metrics (processed volume, match rate, ₹ amount at risk, status distribution) |
+| `/api/reconciliation` | `GET` | Side-by-side reconciliation ledger, matched bank credits, and execution metadata |
+| `/api/exceptions` | `GET` | Ranked exceptions docket (`PROBABLE` / `UNRESOLVED`) sorted by ₹ amount-at-risk |
+| `/api/lineage/{credit_id}` | `GET` | Step-by-step causal deduction tape decomposing gross to net for any bank credit |
+| `/api/forecast` | `GET` | Deterministic forward cash inflow schedules grouped by $T+2$ settlement date |
+| `/api/qa` | `POST` | Non-sycophantic Q&A agent terminal evaluating user queries against ingested evidence |
+| `/api/nudges` | `GET` | Auto-drafted context-aware counterparty recovery communication emails |
+| `/api/forensics` | `GET` | Macro statistical surveillance: Benford 1st-digit $\chi^2$ & 5-bin tolerance clustering |
+| `/api/audit` | `GET` | Cryptographic sequential SHA-256 audit hash-chain status and live tamper verification |
+
+---
+
+## Mathematical & Algorithmic Foundations
+
+Verity enforces mathematical rigor across every module:
+
+1. **Zero-Drift Integer-Paise Normalization:**
+   $$\text{paise} = \mathrm{round}(\text{amount} \times 100)$$
+   All branch-and-bound subset-sum calculations run strictly on $\mathbb{Z}_{\ge 0}$, guaranteeing zero floating-point accumulation drift.
+
+2. **Causal Net Settlement Formula:**
+   $$\text{Expected Net} = \sum \text{Gross} - \text{MDR}(2.0\%) - \text{GST on MDR}(18.0\%) - \text{TDS}(1.0\% \text{ Sec 194O}) - \sum \text{Refunds}$$
+   Example: $₹100,000 - ₹2,000 - ₹360 - ₹1,000 = ₹96,640.00$.
+
+3. **Sequential Cryptographic Audit Chaining:**
+   $$H_0 = \text{SHA256}(\text{"GENESIS"})$$
+   $$H_i = \text{SHA256}(H_{i-1} \parallel \text{CanonicalJSON}(E_i))$$
+   Any byte-level modification of an entry $E_k$ in SQLite breaks all subsequent hashes $H_j$ ($j \ge k$).
+
+4. **Benford's Law Chi-Square Test:**
+   $$P(d) = \log_{10}\left(1 + \frac{1}{d}\right), \quad d \in \{1, \dots, 9\}$$
+   $$\chi^2 = \sum_{d=1}^{9} \frac{(O_d - E_d)^2}{E_d}, \quad \text{with } \text{df} = 8, \; \chi^2_{0.05} = 15.51$$
 
 ---
 
