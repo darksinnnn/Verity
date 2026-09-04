@@ -307,6 +307,3 @@ Verity/
 2. **Local Hash-Chain Threat Model**:
    Verity’s SHA-256 hash chain prevents silent in-place modification or record deletion in `finance.db`. Defending against an attacker who recomputes the entire hash chain from genesis requires publishing daily root hashes to an external timestamping service or immutable ledger.
 ---
-
-## License
-MIT License. Built for the **Razorpay AI Buildathon (Track 04 — AI Finance Controller)**.
