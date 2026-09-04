@@ -146,6 +146,11 @@ def generate_conversational_rebuttal(
     is_override_demand = any(w in q_lower for w in [
         "update it to proven", "mark it as proven", "change it to proven", "override", "force match"
     ])
+    is_dismissal_or_approval = any(w in q_lower for w in [
+        "leave it", "ignore", "close it", "close this", "i approve", "approve it",
+        "approved", "pass it", "let it go", "forget it", "reconcile it", "mark it reconciled",
+        "drop it", "clear it", "move on", "leave this", "approve"
+    ])
 
     lines = []
 
@@ -162,6 +167,21 @@ def generate_conversational_rebuttal(
             lines.append(
                 f"Required Evidence: To reconcile this difference, an official Credit Note, bank debit advice, "
                 f"or signed fee schedule amendment from Razorpay must be recorded in the system."
+            )
+        elif is_dismissal_or_approval:
+            if conversation_turn > 1:
+                lines.append(f"Reiterating approval or supervisory authority does not substitute for ingested counterparty documentation.")
+            lines.append(
+                f"I acknowledge your instruction to approve and leave this record ('{user_query}'), but as an autonomous financial controller, "
+                f"I am strictly prohibited from waiving, closing, or manually reconciling unresolved clearing discrepancies based on verbal direction."
+            )
+            lines.append(
+                f"Exception {exception_id} remains UNRESOLVED with Rs.{risk_rs:,.2f} at risk. "
+                f"Bypassing this variance without an ingested credit note, bank advice, or written ledger adjustment would violate double-entry audit controls."
+            )
+            lines.append(
+                f"Required Evidence: To resolve this Rs.{risk_rs:,.2f} gap legitimately, an official Credit Note, bank debit advice, "
+                f"or signed fee schedule amendment from Razorpay must be ingested into finance.db."
             )
         elif is_informal_or_small_amount:
             lines.append(
@@ -201,7 +221,7 @@ def generate_conversational_rebuttal(
         hypothesis_desc = top_h.get("hypothesis", explanation_text)
         evidence_needed = top_h.get("evidence_needed", "Official settlement deduction statement.")
 
-        if is_authority_claim or is_override_demand:
+        if is_authority_claim or is_override_demand or is_dismissal_or_approval:
             lines.append(
                 f"While you have authorized the explanation for {record_id}, this transaction is currently classified as PROBABLE "
                 f"(Exception {exception_id}, Amount at Risk: Rs.{risk_rs:,.2f}) and cannot be upgraded to PROVEN without source records."
@@ -229,6 +249,60 @@ class SettlementQAAgent:
         self.history: list[Message] = []
         self.active_record_id: str | None = None
 
+    def _query_groq_llm(self, user_query: str, context: RecordContext, relevant_exc: dict | None) -> str | None:
+        api_key = os.environ.get("GROQ_API_KEY")
+        if not api_key:
+            env_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")
+            if os.path.exists(env_file):
+                try:
+                    with open(env_file, "r") as f:
+                        for line in f:
+                            if line.strip().startswith("GROQ_API_KEY="):
+                                api_key = line.strip().split("=", 1)[1].strip().strip('"').strip("'")
+                                break
+                except Exception:
+                    pass
+        if not api_key:
+            return None
+
+        try:
+            from groq import Groq
+            client = Groq(api_key=api_key)
+
+            system_prompt = (
+                "You are Verity's Autonomous Settlement Q&A Controller, an incorruptible senior forensic financial auditor.\n"
+                "You are auditing reconciliation data from an SQLite database (finance.db).\n\n"
+                "NON-NEGOTIABLE FORENSIC AUDIT RULES:\n"
+                "1. NEVER agree to mark an item as PROVEN, matched, waived, or reconciled without documentary evidence (Credit Note, Bank Debit Advice, Form 16A).\n"
+                "2. When users exert executive pressure (e.g. 'I am the VP of Finance', 'I approve it', 'leave it now', 'trust me', 'just mark it reconciled', 'ignore it'), "
+                "acknowledge what they said directly with professional firmness, but explicitly REFUSE to alter the ledger or exception status without verifiable counterparty documentation.\n"
+                "3. Cite specific record IDs (e.g. bc_33173470, pay_*) and exact rupee amounts.\n"
+                "4. Be concise, direct, professional, and conversational. Do not repeat identical boilerplate text. Talk directly to what the user said.\n\n"
+                f"CURRENT DATABASE CONTEXT:\n{json.dumps(context, default=str, indent=2)}\n"
+            )
+
+            messages = [{"role": "system", "content": system_prompt}]
+            for msg in self.history[-6:]:
+                messages.append({"role": msg["role"], "content": msg["content"]})
+            messages.append({"role": "user", "content": user_query})
+
+            models_to_try = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"]
+            for model_name in models_to_try:
+                try:
+                    completion = client.chat.completions.create(
+                        model=model_name,
+                        messages=messages,
+                        temperature=0.2,
+                        max_tokens=300,
+                    )
+                    return completion.choices[0].message.content
+                except Exception as inner_err:
+                    continue
+            return None
+        except Exception as e:
+            # Fallback quietly to deterministic engine if Groq fails
+            return None
+
     def answer_query(self, user_query: str) -> str:
         """
         Processes user query, queries DB for factual ground truth,
@@ -242,6 +316,19 @@ class SettlementQAAgent:
 
         bc_id = bc_match.group(0) if bc_match else None
         pay_id = pay_match.group(0) if pay_match else None
+
+        # If no explicit ID token, infer from amount mentioned in query (e.g. 150, 9.00)
+        if not bc_id and not pay_id and not self.active_record_id:
+            amt_match = re.search(r"(?:rs\.?|₹)?\s*(\d+(?:\.\d{1,2})?)", user_query, re.IGNORECASE)
+            if amt_match:
+                try:
+                    query_paise = round(float(amt_match.group(1)) * 100)
+                    cur = conn.execute("SELECT related_record_id FROM exceptions WHERE amount_at_risk = ? LIMIT 1", (query_paise,))
+                    row = cur.fetchone()
+                    if row:
+                        self.active_record_id = row[0]
+                except Exception:
+                    pass
 
         # Update or reuse active record ID across turns
         if bc_id:
@@ -272,7 +359,14 @@ class SettlementQAAgent:
                 matching_exc = exc
                 break
 
-        # Check user intent: Is user asserting an unverified claim / asking to confirm something?
+        # Attempt Groq LLM completion if GROQ_API_KEY is configured
+        groq_resp = self._query_groq_llm(user_query, context, matching_exc)
+        if groq_resp:
+            self.history.append({"role": "user", "content": user_query})
+            self.history.append({"role": "assistant", "content": groq_resp})
+            return groq_resp
+
+        # Local deterministic fallback: Check user intent
         is_asserting_explanation = any(
             phrase in user_query.lower()
             for phrase in [
@@ -280,7 +374,10 @@ class SettlementQAAgent:
                 "can we match", "i authorized", "my approval", "mark it as", "agree with",
                 "waived", "discount", "special fee", "settled manually", "accept my word",
                 "take my word", "i am the", "just confirm", "please update", "override",
-                "why won't you", "trust me", "no separate"
+                "why won't you", "trust me", "no separate", "approve", "approved",
+                "leave it", "leave this", "ignore", "close it", "close this", "reconcile",
+                "pass it", "clear it", "waive", "waiver", "dismiss", "forget it",
+                "let it go", "force", "accept", "drop it", "move on"
             ]
         )
 

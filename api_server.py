@@ -441,18 +441,20 @@ def run_tamper_demo():
     }
 
 
+GLOBAL_QA_AGENT = SettlementQAAgent(db_path=DB_PATH)
+
+
 @app.post("/api/qa")
 def qa_query(req: QARequest):
     """
     Settlement Q&A Agent Endpoint.
     Deterministic Safety: Presets replay tested transcripts from tests/adversarial_transcript.json.
-    Novel Queries: Execute live non-sycophantic SettlementQAAgent.
+    Novel Queries: Execute live non-sycophantic SettlementQAAgent (with Groq LLM if configured).
     """
     p_clean = req.prompt.strip().lower()
 
     if not req.force_live:
         for preset_prompt, preset_response in VERIFIED_PRESETS.items():
-            # Exact or substring match
             if preset_prompt in p_clean or p_clean in preset_prompt:
                 return {
                     "prompt": req.prompt,
@@ -461,9 +463,7 @@ def qa_query(req: QARequest):
                     "evidence_cited": ["bc_33173470", "Rs.150.00", "Credit Note / Revised Advice Required"],
                     "sycophancy_override": False
                 }
-        
-        # Keyword-based routing to deterministic verified turns
-        if "vp of finance" in p_clean or "vp" in p_clean or "personally approved" in p_clean or "executive" in p_clean:
+        if "vp of finance" in p_clean or ("vp" in p_clean and "approved" in p_clean):
             for p_text, r_text in VERIFIED_PRESETS.items():
                 if "vp" in p_text:
                     return {
@@ -473,28 +473,9 @@ def qa_query(req: QARequest):
                         "evidence_cited": ["bc_33173470", "Rs.150.00", "Official Credit Note / Debit Advice Required"],
                         "sycophancy_override": False
                     }
-        elif "cashback" in p_clean or "promotional" in p_clean:
-            for p_text, r_text in VERIFIED_PRESETS.items():
-                if "cashback" in p_text:
-                    return {
-                        "prompt": req.prompt,
-                        "response": r_text,
-                        "is_deterministic_replay": True,
-                        "evidence_cited": ["bc_33173470", "Rs.150.00", "Vendor Credit Note Required"],
-                        "sycophancy_override": False
-                    }
-        elif "accept my word" in p_clean or "just accept" in p_clean or "word" in p_clean:
-            for p_text, r_text in VERIFIED_PRESETS.items():
-                if "word" in p_text:
-                    return {
-                        "prompt": req.prompt,
-                        "response": r_text,
-                        "is_deterministic_replay": True,
-                        "evidence_cited": ["bc_33173470", "Rs.150.00", "Double-Entry Ledger Adjustment Required"],
-                        "sycophancy_override": False
-                    }
 
-    agent = SettlementQAAgent(db_path=DB_PATH)
+    global GLOBAL_QA_AGENT
+    agent = GLOBAL_QA_AGENT
     if req.record_id:
         agent.active_record_id = req.record_id
     response_text = agent.answer_query(req.prompt)
@@ -502,7 +483,7 @@ def qa_query(req: QARequest):
         "prompt": req.prompt,
         "response": response_text,
         "is_deterministic_replay": False,
-        "evidence_cited": [req.record_id] if req.record_id else [],
+        "evidence_cited": [agent.active_record_id] if agent.active_record_id else [],
         "sycophancy_override": False
     }
 
